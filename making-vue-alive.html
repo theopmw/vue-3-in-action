@@ -23,14 +23,16 @@
     </div>
   </div>
   <script>
-    // const { createApp, ref } = Vue;
-    // const App = {
-    //   setup() {
-        
-    //   },
-    // };
+    const { createApp, ref } = Vue;
+    const App = {
+      setup() {
+        return {
+          message: 'Hello World!'
+        }
+      },
+    };
 
-    // createApp(App).mount('#app');
+    createApp(App).mount('#app');
   </script>
 </body>
 
