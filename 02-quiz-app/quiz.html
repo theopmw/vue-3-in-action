@@ -38,7 +38,7 @@
       </div>
       <div>
         <!-- Connect the input? -->
-        <input v-model="" />
+        <input v-model="answer" />
       </div>
     </div>
     <script>
@@ -51,18 +51,15 @@
             'What is the rest from 3/1',
           ];
           const answers = ['4', '16', '1'];
-          const score = /* reactive */ 0;
-          const current = /* reactive */ 0;
-          const answer = /* reactive */ 0;
-          const question =
-            computed();
-            // Implement the computed
-          const rightAnswer =
-            computed();
-            // Implement the computed
-          const areWeDone =
-            computed();
-            // Implement the computed
+          const score = ref(0);
+          const current = ref(0);
+          const answer = ref(null);
+          const question = computed();
+
+          const rightAnswer = computed();
+          // Implement the computed
+          const areWeDone = computed();
+          // Implement the computed
           // This function does the actual check
           // 1) Is the currently entered answer the expected one?
           // 2) What needs to be happen with current question number?
@@ -84,7 +81,9 @@
           const interval = setInterval(/* what's missing here? */);
           // What needs to be returned here? Remember, what needs to happen for the template to use a reactive or computed property?
           return {
-            /* What's missing here? */
+            areWeDone,
+            question,
+            answer,
           };
         },
       };
