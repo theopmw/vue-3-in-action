@@ -63,7 +63,7 @@
       <!-- Form for Adding Photos -->
       <form>
         <input placeholder="Enter image URL" />
-        <button type="submit">Add Photo</button>
+        <button type="submit" @click="addPhoto">Add Photo</button>
       </form>
 
       <!-- Conditional Rendering -->
@@ -91,7 +91,9 @@
             // Favorite toggling logic
           };
 
-          return {};
+          return {
+            addPhoto,
+          };
         },
       };
       createApp(App).mount('#app');
