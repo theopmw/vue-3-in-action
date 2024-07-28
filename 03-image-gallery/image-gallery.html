@@ -61,7 +61,7 @@
   <body>
     <div id="app">
       <!-- Form for Adding Photos -->
-      <form @submit="addPhoto">
+      <form @submit.prevent="addPhoto">
         <input placeholder="Enter image URL" />
         <button type="submit">Add Photo</button>
       </form>
@@ -84,8 +84,8 @@
         setup() {
           // Keep track of the list of photos
           // We need a ref for the currently entered URL
-          const addPhoto = () => {
-            // Adding photo logic goes here
+          const addPhoto = (e) => {
+            console.log('I was clicked!');
           };
           const toggleFavorite = () => {
             // Favorite toggling logic
