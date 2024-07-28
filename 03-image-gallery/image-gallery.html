@@ -61,9 +61,9 @@
   <body>
     <div id="app">
       <!-- Form for Adding Photos -->
-      <form>
+      <form @submit="addPhoto">
         <input placeholder="Enter image URL" />
-        <button type="submit" @click="addPhoto">Add Photo</button>
+        <button type="submit">Add Photo</button>
       </form>
 
       <!-- Conditional Rendering -->
