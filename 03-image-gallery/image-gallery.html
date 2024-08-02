@@ -62,7 +62,7 @@
     <div id="app">
       <!-- Form for Adding Photos -->
       <form @submit.prevent="addPhoto">
-        <input placeholder="Enter image URL" />
+        <input v-model="newPhotoUrl" placeholder="Enter image URL" />
         <button type="submit">Add Photo</button>
       </form>
 
@@ -84,11 +84,22 @@
       const { createApp, ref } = Vue;
       const App = {
         setup() {
-          const photos = ref([]);
           // Keep track of the list of photos
+          const photos = ref([]);
           // We need a ref for the currently entered URL
+          const newPhotoUrl = ref('');
           const addPhoto = (e) => {
             console.log('I was clicked!');
+            // Add photo logic
+            const photo = {
+              id: photos.value.length + 1,
+              url: newPhotoUrl.value,
+              isFavourite: false,
+            };
+            if (newPhotoUrl.value !== '') {
+              photos.value.push(photo);
+              newPhotoUrl.value = '';
+            }
           };
           const toggleFavorite = () => {
             // Favorite toggling logic
@@ -97,6 +108,7 @@
           return {
             addPhoto,
             photos,
+            newPhotoUrl,
           };
         },
       };
